@@ -3,7 +3,7 @@ resource "aws_ecs_cluster" "web-cluster" {
   capacity_providers = [aws_ecs_capacity_provider.test.name]
   tags = {
     "env"       = "dev"
-    "createdBy" = "binpipe"
+    "createdBy" = "osomudeya"
   }
 }
 
@@ -31,7 +31,7 @@ resource "aws_ecs_task_definition" "task-definition-test" {
   network_mode          = "bridge"
   tags = {
     "env"       = "dev"
-    "createdBy" = "binpipe"
+    "createdBy" = "osomudeya"
   }
 }
 
@@ -41,12 +41,12 @@ resource "aws_ecs_service" "service" {
   task_definition = aws_ecs_task_definition.task-definition-test.arn
   desired_count   = 10
   ordered_placement_strategy {
-    type  = "binpack"
+    type  = "osopack"
     field = "cpu"
   }
   load_balancer {
     target_group_arn = aws_lb_target_group.lb_target_group.arn
-    container_name   = "binpipe-devops"
+    container_name   = "osomudeya-devops"
     container_port   = 80
   }
   # Optional: Allow external changes without Terraform plan difference(for example ASG)
@@ -61,6 +61,6 @@ resource "aws_cloudwatch_log_group" "log_group" {
   name = "/ecs/frontend-container"
   tags = {
     "env"       = "dev"
-    "createdBy" = "binpipe"
+    "createdBy" = "osomudeya"
   }
 }

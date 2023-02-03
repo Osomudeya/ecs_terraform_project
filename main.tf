@@ -8,7 +8,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "ecsworkshopbucket00"
+    bucket = "ecs1993"
     key    = "state/terraform.tfstate"
     region = "us-east-1"
   }
