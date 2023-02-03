@@ -1,7 +1,7 @@
 [
     {
-      "name": "binpipe-devops",
-      "image": "879566836351.dkr.ecr.us-east-1.amazonaws.com/workshop:latest",
+      "name": "osomudeya-devops",
+      "image": "141938542403.dkr.ecr.us-west-1.amazonaws.com/colorapp:latest",
       "cpu": 10,
       "memory": 256,
       "essential": true,
